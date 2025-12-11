@@ -1,3 +1,28 @@
 body{
-    color: red;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#titulo {
+    color: yellowgreen;
+    font-size: 30px;
+}
+
+.texto {
+    color: turquoise;
+}
+.texto_especial{
+    color:rgb(127, 255, 212);
+    text-align: left;
+}
+
+div p{
+    color: violet;
+}
+div h2, h3{
+    color: yellow;
+}
+*{
+    font-size: 24px;
+    color: black;
 }
