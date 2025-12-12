@@ -1,0 +1,188 @@
+/* ------------------------- */
+/* ⚙️ RESETEO GENERAL        */
+/* ------------------------- */
+*{
+    box-sizing: border-box; /* Incluye padding y borde dentro del tamaño total del elemento */
+    margin: 0; /* Elimina margen por defecto */
+    padding: 0; /* Elimina padding por defecto */
+}
+
+/* ------------------------- */
+/* 🌄 ESTILOS DEL BODY       */
+/* ------------------------- */
+body{
+    background: #00c9ff; /* Color de fondo base */
+    background: -webkit-linear-gradient(to right, #92fe9d, #00c9ff); /* Degradado para navegadores WebKit */
+    background: linear-gradient(to right, #92fe9d, #00c9ff); /* Degradado estándar */
+    color: var(--color-white); /* Color de texto usando variable CSS */
+    font-family: sans-serif; /* Fuente principal */
+    min-height: 100vh; /* Altura mínima de la ventana completa */
+}
+
+/* ------------------------- */
+/* 🧱 CONTENEDOR PRINCIPAL   */
+/* ------------------------- */
+.container-main{
+    display: grid; /* Usa grid layout */
+    grid-template-columns: 1fr 3fr; /* Dos columnas: 1 parte y 3 partes */
+    margin: 20px auto; /* Centrado con margen */
+    max-width: 1500px; /* Máximo ancho */
+    padding: 40px auto; /* Padding vertical (aunque auto aquí no se usa) */
+    gap: 12px; /* Espacio entre elementos del grid */
+    width: 90%; /* Ancho relativo de la página */
+}
+
+/* ------------------------- */
+/* 🖼️ SECCIÓN BANNER         */
+/* ------------------------- */
+.banner{
+    background-position: center; /* Centra imagen de fondo */
+    background-size: cover; /* Ajusta imagen a cubrir el espacio */
+    border: 2px solid; /* Borde simple */
+    display: flex; /* Diseño flexible */
+    flex-direction: column; /* Coloca elementos en columna */
+    justify-content: space-between; /* Espacio entre elementos */
+}
+
+/* Hover del botón dentro del banner */
+.banner .button:hover{
+    transform: scale(1.03); /* Efecto de aumento */
+    transition: transform 0.2s; /* Transición suave */
+}
+
+/* Lista dentro del banner */
+.banner ul{
+    list-style: none; /* Quita viñetas */
+}
+.banner ul li{
+    font-weight: bold; /* Texto en negrita */
+    padding-bottom: 8px; /* Espacio inferior */
+}
+
+/* ------------------------- */
+/* 🃏 TARJETAS               */
+/* ------------------------- */
+.container-cards{
+    display: grid; /* Grid de tarjetas */
+    grid-template-columns: repeat(3,1fr); /* 3 columnas iguales */
+    gap: 10px; /* Separación entre tarjetas */
+}
+
+/* Contenedor de textos dentro de una tarjeta */
+.card .texts{
+    display: flex; /* Diseño flexible */
+    flex-direction: column; /* Texto en columna */
+    justify-content: space-between; /* Espacia contenido */
+    height: 100%; /* Ocupa alto completo */
+}
+
+/* Hover de tarjeta */
+.card:hover{
+    transform: scale(1.03); /* Aumenta ligeramente */
+    transition: transform 0.2s; /* Suavidad */
+}
+
+/* Alineación de subtítulos */
+.card .texts h5{
+    text-align: right; /* Alinea texto a la derecha */
+}
+
+/* ------------------------- */
+/* ℹ️  SECCIÓN DE INFORMACIÓN */
+/* ------------------------- */
+.container-info{
+    display: grid; /* Diseño de grid */
+    grid-template-columns: 3fr 1fr; /* Columna grande y columna pequeña */
+    margin: 20px auto; /* Centrado */
+    max-width: 1500px; /* Ancho máximo */
+    padding: 40px auto; /* Padding (aunque auto no aplica) */
+    gap: 10px; /* Separación */
+    width: 90%; /* Ancho relativo */
+    text-align: justify; /* Texto justificado */
+}
+
+/* Formulario dentro del contenedor */
+.container-info .form{
+    display: flex; /* Flex layout */
+    flex-direction: column; /* Elementos en columna */
+    justify-content: space-between; /* Espaciado interno */
+}
+
+/* Inputs y textarea */
+.form input,textarea {
+    border: red blue ; /* ❌ Esto no es válido, deberías usar border: 1px solid red; */
+    padding: 15px; /* Espaciado interno */
+    margin: 10px; /* Separación externa */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Botón del formulario */
+.form button{
+    background-color: yellow; /* Fondo amarillo */
+    padding: 10px; /* Espaciado interno */
+    margin: 10px; /* Separación externa */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Hover sobre el botón del form */
+.form .button:hover{
+    transform: scale(1.03); /* Efecto de aumento */
+    transition: transform 0.2s; /* Suavidad */
+}
+
+/* ------------------------- */
+/* 🖼️  GALERÍA DE IMÁGENES   */
+/* ------------------------- */
+.container-images{
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(2,1fr); /* Dos columnas iguales */
+    max-width: 1500px; /* Ancho máximo */
+    padding: 40px auto; /* Padding (auto no funciona aquí) */
+    width: 90%; /* Ancho relativo */
+    text-align: center; /* Centra contenido */
+    transition: transform 0.2s; /* Animación general */
+}
+
+/* Hover de imágenes */
+.container-images img:hover{
+    transform: scale(1.03); /* Aumenta la imagen */
+}
+
+/* ------------------------- */
+/* 📱 MEDIA QUERIES 992px    */
+/* ------------------------- */
+@media only screen and (max-width: 992px){
+    .container-info .presentation{
+        font-size: 14px; /* Reduce tamaño del texto */
+    }
+    .container-images{
+        grid-template-columns: repeat(1, 1fr); /* Galería pasa a 1 columna */
+    }
+}
+
+/* ------------------------- */
+/* 📱 MEDIA QUERIES 768px    */
+/* ------------------------- */
+@media only screen and (max-width: 768px){
+    .container-main{
+        grid-template-columns: 1fr; /* Pasa a una sola columna */
+    }
+    .container-cards{
+        grid-template-columns: repeat(2,1fr); /* 2 tarjetas por fila */
+    }
+    .container-info{
+        grid-template-columns: 1fr; /* Info en una columna */
+    }
+    .container-images{
+        grid-template-columns: 1fr; /* Imágenes en una columna */
+    }
+}
+
+/* ------------------------- */
+/* 📱 MEDIA QUERIES 600px    */
+/* ------------------------- */
+@media only screen and (max-width: 600px){
+    .container-cards{
+        grid-template-columns: repeat(1,1fr); /* Una tarjeta por fila */
+    }
+}

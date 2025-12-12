@@ -1,132 +1,175 @@
-/* body{  
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* ---------------------------------------------------
+   CONFIGURACIÓN GENERAL DE LA PÁGINA
+--------------------------------------------------- */
+body{  
+    box-sizing: border-box; /* Incluye padding y borde dentro del ancho total */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente general */
 }
 
+/* ---------------------------------------------------
+   SELECTORES POR ID
+--------------------------------------------------- */
 #titulo {
-    color: yellowgreen;
-    font-size: 30px;
+    color: yellowgreen; /* Color del texto */
+    font-size: 30px; /* Tamaño de letra */
 }
 
-.texto {
-    color: turquoise;
-}
-.texto_especial{
-    color:rgb(127, 255, 212);
-    text-align: left;
-}
+/* Fondo con imagen y color */
+#fondo{
+    background-color: rgba(255,0,0); /* Color rojo semitransparente */
+    opacity:0.5; /* Transparencia del elemento completo */
+    height: 400px; /* Altura del contenedor */
 
-div p{
-    color: violet;
-}
-div h2, h3{
-    color: yellow;
-}
-*{
-    font-size: 24px;
-    color: black;
-    text-align: justify;
-} */
-
-/* h1{
-    border: 5px black solid;
-    text-align: center; 
-    border-style: solid;
-    border-width: 3px;
-    border-radius: 8px;
-    padding: 5px;    
-} */
-
-/* #fondo{
-    background-color: rgba(255,0,0);
-    opacity:0.5; 
-    height: 400px;
+    /* Imagen de fondo */
     background-image: url('img.png');
-    background-position: bottom;
-    background: #0503 url('img.png') repeat-y center;
-    background-size: 100px 100px;
-    background-repeat: repeat-x; 
+    background-position: bottom; /* Alineación abajo */
     
-} */
+    /* Estilo abreviado del background */
+    background: #0503 url('img.png') repeat-y center;
+    
+    background-size: 100px 100px; /* Tamaño de la imagen */
+    background-repeat: repeat-x; /* Repetición horizontal */
+}
+
+/* ---------------------------------------------------
+   SELECTORES POR CLASE
+--------------------------------------------------- */
+.texto {
+    color: turquoise; /* Color del texto */
+}
+
+.texto_especial{
+    color:rgb(127, 255, 212); /* Color especial */
+    text-align: left; /* Alineación a la izquierda */
+}
 
 .margen{
-    background-color: rgb(238, 11, 11);
-    margin: 15px 20px 25px 30px;
-    padding: 30px 25px 20px 15px;
-    border: 2px solid black;
+    background-color: rgb(238, 11, 11); /* Fondo rojo */
+    margin: 15px 20px 25px 30px; /* Margen externo (arriba, derecha, abajo, izquierda) */
+    padding: 30px 25px 20px 15px; /* Espaciado interno */
+    border: 2px solid black; /* Borde negro */
     height: 100px;
     width: 50px;
-    overflow: scroll;
-    outline: 1px solid yellow;
-
+    overflow: scroll; /* Barra de desplazamiento si el contenido se desborda */
+    outline: 1px solid yellow; /* Línea por fuera del borde */
 }
 
 .texto2{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    text-decoration: line-through overline underline;
-    text-shadow: 3px 5px 5px blue;
-    letter-spacing: 3px;
-}
-a:link{
-    color:blueviolet
-}
-a:visited{
-    color: gray;
-}
-a:hover{
-    color:yellow
-}
-a:active{
-    color: red;
-}
-ul{
-    background-color: cyan;
-    /* list-style-type: none; */
-    /* padding-left: 0; */
-    /* list-style-position: inside; */
-    list-style-type: circle;
+    text-align: center; /* Texto centrado */
+    text-decoration: line-through overline underline; /* Tachado, línea arriba y subrayado */
+    text-shadow: 3px 5px 5px blue; /* Sombra azul del texto */
+    letter-spacing: 3px; /* Separación entre letras */
 }
 
-table{
-    width: 100%;
-    border-collapse: collapse;
-
+.inline{
+    display: inline; /* Fuerza comportamiento en línea */
 }
-th,td{
-    border: 1px solid gray;
+
+/* ---------------------------------------------------
+   SELECTORES POR ELEMENTO
+--------------------------------------------------- */
+
+/* Todos los elementos */
+*{
+    font-size: 24px; /* Tamaño global del texto */
+    color: black; /* Color global */
+    text-align: justify; /* Justificar texto */
+}
+
+/* Encabezado h1 */
+h1{
+    border: 5px black solid; /* Borde negro */
+    text-align: center; 
+    border-style: solid;
+    border-width: 3px; 
+    border-radius: 8px; /* Bordes redondeados */
     padding: 5px;
 }
+
+/* Párrafos dentro de div */
+div p{
+    color: violet; /* Color morado */
+}
+
+/* h2 dentro de div y TODOS los h3 de la página */
+div h2, h3{
+    color: yellow; /* Color amarillo */
+}
+
+/* ---------------------------------------------------
+   ESTILOS PARA ENLACES
+--------------------------------------------------- */
+a:link{
+    color:blueviolet; /* Enlace sin visitar */
+}
+a:visited{
+    color: gray; /* Enlace ya visitado */
+}
+a:hover{
+    color:yellow; /* Cuando el puntero está encima */
+}
+a:active{
+    color: red; /* Cuando se hace clic */
+}
+
+/* ---------------------------------------------------
+   LISTAS
+--------------------------------------------------- */
+ul{
+    background-color: cyan; /* Fondo celeste */
+    list-style-type: none; /* Quita viñetas por defecto */
+    padding-left: 0; /* Quita sangría */
+    list-style-position: inside; /* Viñeta dentro del contenedor */
+    list-style-type: circle; /* Viñeta tipo círculo */
+}
+
+/* ---------------------------------------------------
+   TABLAS
+--------------------------------------------------- */
+table{
+    width: 100%; /* Ocupa todo el ancho */
+    border-collapse: collapse; /* Une bordes */
+}
+
+th,td{
+    border: 1px solid gray; /* Borde de celdas */
+    padding: 5px; /* Espaciado interior */
+}
+
 th{
-    background-color: aqua;
-    color: blueviolet;
-    text-align:left;
+    background-color: aqua; /* Fondo del encabezado */
+    color: blueviolet; /* Texto del encabezado */
+    text-align:left; /* Alineación */
 }
 
+/* Hover en filas */
 tr:hover{
-    background-color: blueviolet;
-    cursor: pointer;
-
+    background-color: blueviolet; /* Color al pasar el mouse */
+    cursor: pointer; /* Manito al pasar */
 }
-/* tr:nth-child(even){
-    background-color: azure;
-    cursor: pointer; 
 
-} */
+/* Filas pares */
+tr:nth-child(even){
+    background-color: azure;
+}
+
+/* Filas impares */
 tr:nth-child(odd){
     background-color: azure;
-    cursor: pointer;
-
 }
+
+/* ---------------------------------------------------
+   SPAN (OCULTO)
+--------------------------------------------------- */
 span{
     background-color: blue;
-    display: block;
-    /* display: none; */
-    /* visibility: hidden; */
-    max-width: 300px
-    
-
+    display: block; /* Convertido en bloque */
+    display: none; /* Luego ocultado */
+    visibility: hidden; /* Invisible pero con espacio reservado */
+    max-width: 300px;
 }
-.inline{
-    display: inline;
+
+/* Tabla adicional vacía (quizás por error, pero no afecta) */
+table{
 }
